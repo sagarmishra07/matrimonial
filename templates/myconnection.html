@@ -1,0 +1,38 @@
+
+{% include "base.html" %}
+{% block content %}
+
+
+{% if requestprofile %}
+{% for requestprofile in requestprofile %}  
+<center>
+   <div class="col-md-3 card">
+ 
+ <h4> 
+   
+   
+    
+    
+    Age from :{{requestprofile.age1}} To {{requestprofile.age2}}
+    Gender:{{requestprofile.gender}}
+    Phone:{{requestprofile.phone}}
+    Education:{{requestprofile.education}}
+    Caste:{{requestprofile.caste}}
+    
+
+        </div>
+        <a class="btn btn-primary" href="/myconnectionedit/{{requestprofile.id}}">Update</a>    
+        <a class="btn btn-dark" href="/deleteconnection/{{requestprofile.id}}">Delete</a>    
+</div>
+{% endfor %}
+
+</center>
+</h4>
+
+{% else %}
+<br><br><br><br><br><br><br>
+<center><h3>No profile found..</h3> </center> <br>
+<center><a class="btn btn-primary" href="/connectioninfo/">Create One</a></center>
+{% endif %}
+
+{% endblock %}

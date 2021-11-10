@@ -1,0 +1,78 @@
+{% include "base.html" %}
+{% block content %}
+
+
+<!DOCTYPE>
+<html>
+
+<body>
+
+    <form action="/createprofile/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        First Name:<input type="text" name="firstname"> <br>
+        Last Name:<input type="text" name="lastname"> <br>
+        Age: <input type="number" name="age"><br>
+        Gender
+        <select name="gender">
+
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+           
+        </select><br>
+        Image:<input type="file" name = "image" class="content"><br>
+        Phone: <input type="number" name="phone"><br>
+        details: <input type="textfield" name="details"><br>
+        Salary
+        <select name="salary">
+
+            <option value="less than 20000">Less than 20000</option>
+            <option value="20000-30000">20000-30000</option>
+            <option value="30000-40000">30000-40000</option>
+            <option value="above 40000">40000+</option>
+        </select><br>
+    
+
+   
+    Education
+    <select name="education" id="education">
+
+        <option value="Bachelors"> Bachelors</option>
+        <option value="Masters">Masters</option>
+        <option value="PHD">PHD</option>
+    </select><br>
+    Caste
+    <select name="caste">
+
+        <option value="Brahmin"> Brahmin</option>
+        <option value="Newar">Newar</option>
+        <option value="Tamang">Tamang</option>
+        <option value="Rai">Rai</option>
+    </select><br>
+
+  
+
+    Occupation
+    <select name="occupation">
+
+        <option value="Teacher"> Teacher</option>
+        <option value="Businessman">Businessman</option>
+        <option value="Software Developer">Software Developer</option>
+        <option value="Banker">Banker</option>
+    </select><br>
+
+Address: <input type="text" name="address"><br>
+<button class="btn btn-primary" type="submit">Create Profile</button>
+    </form>
+
+
+
+    
+    
+   
+   
+</body>
+
+</html>
+
+{% endblock %}

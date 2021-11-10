@@ -1,0 +1,116 @@
+{% load static %}
+{% include "base.html" %}
+{% block content %}
+<style>
+#slider {
+	overflow:hidden;
+  height: 85vh;
+  margin-bottom: 10;
+  margin-top: 10;
+  margin-left: 7;
+  margin-right: 7;
+}
+#slider figure {
+	position:relative;
+
+  width: 500%;
+	margin: 0;
+	left: 0;
+	animation:20s slider infinite;
+}
+#slider figure img {
+		
+
+  width: 19.93%;
+	float: left;
+  object-fit:fill;
+  
+}
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
+}
+</style>  
+<div id="slider">
+  <figure>
+            <img src="{% static 'image/1.JPG' %}" >
+            <img src="{% static 'image/2.JPG' %}"> 
+     
+           
+           
+           <img src="{% static 'image/1.JPG' %}">
+          
+            <img src="{% static 'image/2.JPG' %}"> 
+              <img src="{% static 'image/1.JPG' %}"> 
+  </figure>
+</div> 
+
+<br><br><br>
+<h1> <center>Available Profiles</center></h1><br><br><br>
+
+  <div class="row mt-4">
+    
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+{% for p in profile %}
+   <div class="col-md-3 card">
+        
+ <h6>  
+     <p> <center>
+       <h3>Name: {{p.firstname}} {{p.lastname}}</h3> <br>Profile Views: {{p.view_count}}</center></p>
+      <div class="m-3">
+     <img src="{{p.image.url}}" width="300" height="350">
+
+  
+    Age:{{p.age}}
+    
+        Details:{{p.details}}
+<a class="btn btn-primary" href="profile/{{p.id }}">Read More</a>
+<a >
+        </div>
+ 
+</div>
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp;&nbsp; &nbsp;
+{% endfor %}
+</div>
+<br><br><br>
+<h2><center>Why are you waiting for your dream Partner?</h2></center><br>
+<center>
+  
+  <a class="btn btn-primary" href="/createprofile/">Create Profile</a>&nbsp; &nbsp; &nbsp;
+  <a class="btn btn-primary" href="/myprofile/">My Profile</a>&nbsp; &nbsp; &nbsp;
+  <a class="btn btn-primary" href="/connectioninfo/">Create Match</a>&nbsp; &nbsp; &nbsp;
+  <a class="btn btn-primary" href="/myconnection/">My Match</a>&nbsp; &nbsp; &nbsp;
+
+</center>
+
+
+
+{% endblock %}

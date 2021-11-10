@@ -1,0 +1,32 @@
+
+{% include "base.html" %}
+{% block content %}
+
+
+<center>
+   <div class="col-md-3 card">
+        
+ <h4> 
+     <p>Category:{{profile.category}} <br> Profile Views: {{profile.view_count}}</p>
+      <div class="m-3">
+     <img src="{{profile.image.url}}" width="300" height="350">
+
+    
+    Name: {{profile.firstname}} {{profile.lastname}}
+    Age:{{profile.age}}
+    Gender: {{profile.gender}}
+    Education:{{profile.education}}
+    Caste:{{profile.caste}}
+    Phone:{{profile.phone}}
+    Salary:{{profile.salary}}
+    Occupation:{{profile.occupation}}
+    Address:{{profile.address}} 
+        Details:{{profile.details}}
+
+
+        </div>
+ 
+</div>
+</center>
+</h4>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% include "base.html" %}
+{% block content %}
+
+
+<!DOCTYPE>
+<html>
+
+<body>
+
+    <form action="/connectionupdate/{{requestprofile.id}}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+     
+      
+        
+        Age: 
+        From:<input type="number" name="age1" value="{{ requestprofile.age1}}">
+        TO:<input type="number" name="age2" value="{{ requestprofile.age2}}"><br>
+        Gender
+        <select name="gender"  value="{{ requestprofile.gender}}">
+
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+           
+        </select><br>
+         
+    Education
+    <select name="education" id="education" value="{{ requestprofile.education}}">
+
+
+     
+        <option value="Bachelors" > Bachelors</option>
+        <option value="Masters">Masters</option>
+        <option value="PHD">PHD</option>
+     
+    </select><br>
+    
+    
+    Caste
+
+    <select name="caste" value="{{ requestprofile.caste}}">
+      
+        <option value="Brahmin"> Brahmin</option>
+        <option value="Newar">Newar</option>
+        <option value="Tamang">Tamang</option>
+        <option value="Rai">Rai</option>
+        
+        
+    </select><br>
+
+  
+
+    
+<button class="btn btn-primary" type="submit">Update Profile</button>
+    </form>
+
+
+
+    
+    
+   
+   
+</body>
+
+</html>
+
+{% endblock %}

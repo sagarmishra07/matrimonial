@@ -1,0 +1,61 @@
+{% include "base.html" %}
+{% block content %}
+
+
+<!DOCTYPE>
+<html>
+
+<body>
+
+    <form action="/connectioninfo/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      
+        Age Between: <input type="number" name="age1">
+        To: <input type="number" name="age2"><br>
+        
+        Looking for:
+        <select name="gender">
+
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+           
+        </select><br>
+
+    
+
+   
+    Education
+    <select name="education" id="education">
+
+        <option value="Bachelors"> Bachelors</option>
+        <option value="Masters">Masters</option>
+        <option value="PHD">PHD</option>
+    </select><br>
+    Caste
+    <select name="caste">
+
+        <option value="Brahmin"> Brahmin</option>
+        <option value="Newar">Newar</option>
+        <option value="Tamang">Tamang</option>
+        <option value="Rai">Rai</option>
+    </select><br>
+
+  
+
+    
+
+<button class="btn btn-primary" type="submit">Create Profile</button>
+    </form>
+
+
+
+    
+    
+   
+   
+</body>
+
+</html>
+
+{% endblock %}

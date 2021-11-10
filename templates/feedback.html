@@ -1,0 +1,21 @@
+{% include "base.html" %}
+{% block content %}
+
+
+
+
+     
+{% if request.username == profile.username %}
+
+
+
+      <h1>Username {{profile.firstname}}</h1> 
+      <h1>Username {{profile.lastname}}</h1> 
+
+
+ 
+
+{% endif %}
+
+
+{% endblock %}

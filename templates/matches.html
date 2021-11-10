@@ -1,0 +1,24 @@
+{% include "base.html" %}
+{% block content %}
+
+
+
+  
+
+
+{% for requestprofile in requestprofile %}  
+   
+  
+    {{requestprofile.age1}} To {{requestprofile.age2}} <br>
+   
+    
+    Gender:{{requestprofile.gender}}<br>
+    Education:{{requestprofile.education}}<br>
+    Caste:{{requestprofile.caste}}<br>
+    
+    User:{{requestprofile.username}}<br>
+   
+ 
+{% endfor %}
+
+{% endblock %}
